@@ -1,3 +1,69 @@
-<p>
-  filters works!
-</p>
+<div class="container dsk">
+	<div class="row">
+		<div class="col-md-6">
+			<ul class="list-inline">
+				<li><a class="btn btn-default" (click)="bigDataToolService.locFilter = {type: 'Apartment'}">Apartment</a></li>
+				<li><a class="btn btn-default" (click)="bigDataToolService.locFilter = {type: 'House'}">House</a></li>
+				<li><a class="btn btn-default" (click)="bigDataToolService.locFilter = {type: 'Room'}">Room</a></li>
+			</ul>
+			<form ng-hide="!bigDataToolService.display.allFilters">
+				<div class="form-group">
+					<label class="sr-only" for="keywordSearchInput">Keyword Search</label>
+					<div class="input-group">
+						<input class="form-control" id="keywordSearchInput" type="text" placeholder="e.g. Garage, Parking, Furnished, Washer" ng-model="bigDataToolService.searchText"/>
+						<div class="input-group-addon">
+							<i class="fa fa-search"></i>
+						</div>
+					</div>
+				</div>
+			</form>
+			<hr>
+			<p class="pull-left">
+				<a class="btn btn-xs btn-link" (click)="clearAllFilters()">Clear All</a>
+			</p>
+			<p class="pull-right">
+				<a class="btn btn-default" href="" (click)="showAllFilters()" *ngIf="!bigDataToolService.display.allFilters">More Filters</a>
+				<a class="btn btn-zayo" href="" (click)="hideFilters()" *ngIf="bigDataToolService.display.allFilters">Done</a>
+			</p>
+		</div>	
+	</div>
+</div>
+
+
+
+<div class="container mbl">
+	<div class="row">
+		<div class="col-xs-6">
+			<ul class="list-inline">
+				<li><a class="btn btn-default" (click)="bigDataToolService.locFilter = {type: 'Apartment'}">Apartment</a></li>
+				<li><a class="btn btn-default" (click)="bigDataToolService.locFilter = {type: 'House'}">House</a></li>
+				<li><a class="btn btn-default" (click)="bigDataToolService.locFilter = {type: 'Room'}">Room</a></li>
+			</ul>
+			<form>
+				<div class="form-group">
+					<label class="sr-only" for="keywordSearchInput">Keyword Search</label>
+					<div class="input-group">
+						<input class="form-control" id="keywordSearchInput" type="text" placeholder="e.g. Garage, Parking, Furnished, Washer" ng-model="bigDataToolService.searchText"/>
+						<div class="input-group-addon">
+							<i class="fa fa-search"></i>
+						</div>
+					</div>
+				</div>
+			</form>
+			<hr>
+			<p>
+				<a class="btn btn-xs btn-link" (click)="clearAllFilters()">Clear All</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+

@@ -10,6 +10,7 @@ import { LocationListComponent } from './location-list/location-list.component';
 import { FiltersComponent } from './filters/filters.component';
 import { ControlsComponent } from './controls/controls.component';
 import { BigDataToolService } from './big-data-tool.service';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { BigDataToolService } from './big-data-tool.service';
     LocDetailModalComponent,
     LocationListComponent,
     FiltersComponent,
-    ControlsComponent
+    ControlsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

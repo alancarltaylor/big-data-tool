@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BigDataToolService } from '../big-data-tool.service';
 
 @Component({
   selector: 'app-filters',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FiltersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bigDataToolService: BigDataToolService) { }
 
   ngOnInit() {
   }
+
+  showAllFilters() {
+      this.bigDataToolService.display.allFilters = true;
+  }
+
+  hideFilters() {
+      this.bigDataToolService.display.allFilters = false;
+  }
+
+  clearAllFilters() {
+      this.bigDataToolService.locFilter = {};
+      this.bigDataToolService.searchText = "";
+  }
+
 
 }
