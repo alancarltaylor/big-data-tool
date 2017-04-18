@@ -1,32 +1,3 @@
-<!-- loading-spinner(ng-if="!vm.BigDataToolService.locations" load-text="retrieving locations")
-uib-tabset
-    uib-tab(heading="Opportunities")
-        p
-            em [ table/list of opportunities ]
-    uib-tab(heading="Locations")
-        ul.list-unstyled(ng-if="vm.BigDataToolService.locations")
-            li(ng-repeat="location in vm.BigDataToolService.locations | filter: vm.BigDataToolService.locFilter | filter: vm.BigDataToolService.searchText")
-                .panel.panel-default-clean
-                    .panel-body
-                        h3
-                            small starting at&nbsp;
-                            | {{location.rent | currency:undefined:0}}
-                        hr
-                        p
-                            | {{location.qty}} Floorplans
-                            br
-                            | {{location.neighborhood}}, {{location.city}}
-                            br
-                            small
-                                a(href="" ng-click="vm.userClicksLocation()") {{location.address}}
-    uib-tab(heading="Services")
-        p
-            em [ table/list of services ]
-    uib-tab(heading="Sites")
-        p
-            em [ table/list of sites ]
- -->
-
  <div class="loading" *ngIf="!locations"></div>
 	<div class="container">
 		<div class="row">
