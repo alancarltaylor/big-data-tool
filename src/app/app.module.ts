@@ -11,6 +11,9 @@ import { FiltersComponent } from './filters/filters.component';
 import { ControlsComponent } from './controls/controls.component';
 import { BigDataToolService } from './big-data-tool.service';
 import { HeaderComponent } from './header/header.component';
+import { EsriLoaderService } from 'angular2-esri-loader';
+import { Angular2Esri4Module } from 'angular2-esri4-components';
+
 
 
 @NgModule({
@@ -21,14 +24,15 @@ import { HeaderComponent } from './header/header.component';
     LocationListComponent,
     FiltersComponent,
     ControlsComponent,
-    HeaderComponent
+    HeaderComponent 
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule 
+    HttpModule, 
+    Angular2Esri4Module 
   ],
-  providers: [BigDataToolService],
+  providers: [BigDataToolService, EsriLoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
