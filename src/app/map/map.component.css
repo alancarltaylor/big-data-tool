@@ -3,4 +3,6 @@
 
 .esri-view {
     height: 500px;
+    margin-left: -140px;
+    margin-top: -20px;
 }

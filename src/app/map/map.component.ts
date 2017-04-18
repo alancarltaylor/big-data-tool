@@ -44,8 +44,8 @@ export class MapComponent implements OnInit {
           // create the map view at the DOM element in this component
           container: this.mapViewEl.nativeElement,
           // supply additional options
-          center: [-12.287, -37.114],
-          zoom: 12,
+          center: [-100.287, 40.114],
+          zoom: 3,
           map // property shorthand for object literal
         };
 
