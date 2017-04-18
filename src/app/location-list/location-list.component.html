@@ -1,0 +1,76 @@
+<!-- loading-spinner(ng-if="!vm.BigDataToolService.locations" load-text="retrieving locations")
+uib-tabset
+    uib-tab(heading="Opportunities")
+        p
+            em [ table/list of opportunities ]
+    uib-tab(heading="Locations")
+        ul.list-unstyled(ng-if="vm.BigDataToolService.locations")
+            li(ng-repeat="location in vm.BigDataToolService.locations | filter: vm.BigDataToolService.locFilter | filter: vm.BigDataToolService.searchText")
+                .panel.panel-default-clean
+                    .panel-body
+                        h3
+                            small starting at&nbsp;
+                            | {{location.rent | currency:undefined:0}}
+                        hr
+                        p
+                            | {{location.qty}} Floorplans
+                            br
+                            | {{location.neighborhood}}, {{location.city}}
+                            br
+                            small
+                                a(href="" ng-click="vm.userClicksLocation()") {{location.address}}
+    uib-tab(heading="Services")
+        p
+            em [ table/list of services ]
+    uib-tab(heading="Sites")
+        p
+            em [ table/list of sites ]
+ -->
+
+ <div class="loading" *ngIf="!locations"></div>
+	<div class="container">
+		
+	 	<ul class="nav nav-tabs">
+			<li role="presentation" class="active"><a href="#opps" data-toggle="tab">Opportunities</a></li>
+			<li role="presentation"><a href="#locs" data-toggle="tab">Locations</a></li>
+			<li role="presentation"><a href="#servs" data-toggle="tab">Services</a></li>
+			<li role="presentation"><a href="#sites" data-toggle="tab">Sites</a></li>
+	 	</ul>
+	 	<div class="tab-content">
+	 		<div class="tab-pane active" id="opps">
+	 			<p>
+	 				<em>[table/list of opportunities] </em>
+	 			</p>
+	 		</div>
+	 		
+	 		<div class="tab-pane" id="locs">
+	 			<ul>
+	 				<li *ngFor="let location of locations">
+	 					<h3>
+	 						Starting at: {{location.rent | currency:undefined:0}}
+	 					</h3>
+	 					<hr>
+	 					<p>{{location.qty}} Floorplans
+		 					<br>
+		 					{{location.neighborhood}}, {{location.city}}
+		 					<br>
+		 					<a href="" (click)="onLocationClick()">{{location.address}}</a>
+		 				</p>
+	 				</li>
+	 			</ul>
+	 		</div>
+	 		<div class="tab-pane" id="servs">
+	 			<p>
+	 				<em>[table/list of services]</em>
+	 			</p>	
+	 		</div>
+	 		<div class="tab-pane" id="sites">
+	 			<p>
+	 				<em>
+	 					[table/list of sites]
+	 				</em>
+	 			</p>
+	 		</div>
+	 	</div>
+
+	</div>

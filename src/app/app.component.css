@@ -1,0 +1,11 @@
+/*Desktop*/
+.dsk { display: block; }
+.mbl { display: none; }
+
+
+
+/*tablet & smaller*/
+@media screen and (max-width: @screen-tablet) {
+	.dsk { display: none; }
+	.mbl { display: block; }
+}
